@@ -37,6 +37,7 @@
     "dotenv": "^17.4.0",
     "env": "^0.0.2",
     "express": "^5.2.1",
-    "mongoose": "^9.3.3"
+    "mongoose": "^9.3.3",
+    "nodemailer": "^8.0.4"
   }
 }
