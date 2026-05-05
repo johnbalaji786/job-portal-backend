@@ -3,6 +3,7 @@ const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
 const errorRoute = require('./middleware/errorRoute');
 const logger = require('./middleware/logger');
+const companyRouter = require('./routes/companyRoutes');
 
 
 const app = express();
@@ -17,6 +18,7 @@ app.use(cookieParser());
 app.use(logger);
 
 app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/companies', companyRouter);
 
 // catch-all route for handling 404 errors
 app.use(errorRoute);
