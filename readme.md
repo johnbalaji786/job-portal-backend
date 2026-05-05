@@ -27,3 +27,20 @@ Admin Features:
 - Manage Companies (Create, Update, View, Delete)
 - Manage Recruiters (Create, Update, View, Delete)
 - Assign Recruiters to Companies
+
+//sampe job listing
+{
+"title": "Software Engineer",
+"description": "We are looking for a skilled Software Engineer to join our team.",
+"requirements": [
+"Bachelor's degree in Computer Science or related field",
+"3+ years of experience in software development",
+"Proficiency in JavaScript, Node.js, and React"
+],
+"salary": 120000,
+"location": "New York, NY",
+"jobType": "Full-time",
+"experienceLevel": "Mid",
+"skills": ["JavaScript", "Node.js", "React"],
+"applicationDeadline": "2024-12-31"
+}

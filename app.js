@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const errorRoute = require('./middleware/errorRoute');
 const logger = require('./middleware/logger');
 const companyRouter = require('./routes/companyRoutes');
+const jobRouter = require('./routes/jobRouts');
 
 
 const app = express();
@@ -19,6 +20,7 @@ app.use(logger);
 
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/companies', companyRouter);
+app.use('/api/v1/jobs', jobRouter);
 
 // catch-all route for handling 404 errors
 app.use(errorRoute);
