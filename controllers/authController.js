@@ -53,12 +53,18 @@ const authController = {
             // generate a JWT token
             const token = jwt.sign({ userId: user._id }, JWT_SECRET, { expiresIn: '1h' });
             //set the token in cookies
+            // res.cookie('token', token, {
+            //     httpOnly: true,
+            //     secure: NODE_ENV === 'production',
+            //     sameSite: NODE_ENV === 'production' ? 'None' : 'Lax',
+            //     maxAge: 24 * 60 * 60 * 1000 // 1 hour
+            // });
             res.cookie('token', token, {
-                httpOnly: true,
-                secure: NODE_ENV === 'production',
-                sameSite: NODE_ENV === 'production' ? 'None' : 'Lax',
-                maxAge: 24 * 60 * 60 * 1000 // 1 hour
-            });
+    httpOnly: true,
+    secure: true,
+    sameSite: 'None',
+    maxAge: 24 * 60 * 60 * 1000
+});
             return res.status(200).json({
                 message: 'Login successful',
                 user : {
@@ -92,10 +98,14 @@ const authController = {
     },
     logout: (req, res) => {
       try {
-          res.clearCookie('token',{
-            secure: NODE_ENV === 'production',
-            sameSite: NODE_ENV === 'production' ? 'None' : 'Lax'
-        });
+        //   res.clearCookie('token',{
+        //     secure: NODE_ENV === 'production',
+        //     sameSite: NODE_ENV === 'production' ? 'None' : 'Lax'
+          // });
+          res.clearCookie('token', {
+    secure: true,
+    sameSite: 'None'
+});
         res.status(200).json({ message: 'Logout successful' });
       } catch (error) {
         res.status(500).json({ message: 'Error logging out', error: error.message });
