@@ -6,9 +6,13 @@ const logger = require('./middleware/logger');
 const companyRouter = require('./routes/companyRoutes');
 const jobRouter = require('./routes/jobRouts');
 const applicationRouter = require('./routes/applicationRouts');
-
+const cors = require('cors');
 
 const app = express();
+app.use(cors({
+    origin: 'http://localhost:5173', // Adjust this to your frontend URL
+    credentials: true, // Allow cookies to be sent with requests
+}));
 
 //middleware to parse JSON bodies in incoming requests   
 app.use(express.json());
