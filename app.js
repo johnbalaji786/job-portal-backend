@@ -10,7 +10,7 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors({
-    origin: 'http://localhost:5173', // Adjust this to your frontend URL
+    origin: 'https://job-portal-frontend01.netlify.app', // Adjust this to your frontend URL
     credentials: true, // Allow cookies to be sent with requests
 }));
 
